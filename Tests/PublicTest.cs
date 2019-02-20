@@ -9,6 +9,8 @@ namespace PadawansTask6.Tests
         [TestCase(513, ExpectedResult = 531)]
         [TestCase(2017, ExpectedResult = 2071)]
         [TestCase(414, ExpectedResult = 441)]
+        [TestCase(1234321, ExpectedResult = 1241233)]
+        [TestCase(3456432, ExpectedResult = 3462345)]
         public int? NextBiggerThanTests(int number) => NumberFinder.NextBiggerThan(number);
     }
 }

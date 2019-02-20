@@ -9,6 +9,8 @@ namespace PadawansTask6
         {
             if (number <= 0)
                 throw new ArgumentException();
+            if (BigNumber(number))
+                return null;
             int[] numbers = GetMasNumbersFromDigits(number);
             int ind = 0;
 
@@ -53,6 +55,7 @@ namespace PadawansTask6
                     listNumbers.Add(DigitsToNumber(digits));
                 else
                     PuzzleFromDigits(number / 10, digits, listNumbers, false);
+                digits[i] = -2;
             }
         }
 
@@ -79,6 +82,15 @@ namespace PadawansTask6
                     }
                 }
             return A;
+        }
+
+        private static bool BigNumber(int number)
+        {
+            string s = "" + number;
+            string s2 = "" + int.MaxValue;
+            if (s.Length < s2.Length)
+                return false;
+            return true;
         }
     }
 }
